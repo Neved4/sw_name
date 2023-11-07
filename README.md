@@ -5,7 +5,7 @@
 
 ## Background
 
-`sw_name` is a drop-in replacement for `sw_vers` that simplifies retrieving friendly names in macOS (`Ventura`, `Sonoma`). Currently, both `uname -a` and `sw_vers` won't provide this information, and `system_profiler` is not easily parseable and slower.
+`sw_name` is a drop-in replacement for `sw_vers` that simplifies retrieving friendly names in macOS (`Ventura`, `Sonoma`). Currently, both `uname -a` and `sw_vers` won't provide this information, and `system_profiler` is not easily parseable and is slower.
 
 ## Getting Started
 
@@ -102,7 +102,7 @@ If you prefer a concise function, just use `sw_name()`.
 
 ## License
 
-`tmbackup` is licensed under the terms of the [MIT License].
+`sw_name` is licensed under the terms of the [MIT License].
    
 See the [LICENSE](LICENSE) file for details.
 
