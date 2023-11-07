@@ -4,6 +4,6 @@ root = true
 end_of_line = lf
 insert_final_newline = true
 
-[*.{rs,sh}]
+[*.{sh,md}]
 indent_style = tab
 indent_size = 4
