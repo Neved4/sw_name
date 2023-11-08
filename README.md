@@ -13,7 +13,7 @@ easily parseable and is slower.
 ## Getting Started
 
 > [!NOTE]
-> _This utility is only intended to work in macOS._
+> _This utility is only intended to work in [macOS]._
 
 ### Usage
 
@@ -71,6 +71,8 @@ BuildVersion:    23B74
 Then you can use `sw_vers` normally, with a new `-releaseName` flag to
 access macOS friendly names.
 
+***
+
 Alternatively, if you prefer a concise function, you can add this to your
 shell profile:
 ```sh
@@ -95,10 +97,16 @@ Sonoma
 | :------------------------------------------ | :-------- |
 | All from **`macOS 10.5`** to **`macOS 14`** | Yes ✅     |
 
+## Acknowledgments
+
+Thanks to [@risc] for helping test legacy OS X versions.
+
 ## License
 
 `sw_name` is licensed under the terms of the [MIT License].
    
 See the [LICENSE](LICENSE) file for details.
 
+[macOS]: https://www.apple.com/macos/
+[@risc]: https://github.com/0risc
 [MIT License]: https://opensource.org/license/mit/
