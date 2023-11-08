@@ -17,13 +17,33 @@ easily parseable and is slower.
 
 ### Usage
 
+`sw_name` can be invoked in the following ways:
 ```sh
 sw_name
-sw_name --releaseName
-sw_name --productName
-sw_name --productVersion
-sw_name --productVersionExtra
-sw_name --buildVersion
+sw_name -releaseName
+sw_name -productName
+sw_name -productVersion
+sw_name -productVersionExtra
+sw_name -buildVersion
+```
+
+And has the following options:
+```
+Options:
+    -R, -releaseName, --releaseName
+        Prints release name (e.g.: Sonoma, Ventura, Monterey)
+
+    -n, -productName, --productName
+        Prints product name (e.g.: macOS, Mac OS X)
+
+    -v, -productVersion, --productVersion
+        Prints product version (e.g.: 12.1, 14.0)
+
+    -productVersionExtra, --productVersionExtra 
+        Prints info specific to certain releases (e.g: (a))
+
+    -b, -buildVersion, --buildVersion
+        Prints the build version (e.g.: 23B81, 21A559)
 ```
 
 ### Setup
@@ -41,7 +61,7 @@ alias sw_vers='/path/to/sw_vers_name.sh'
 
 Then simply execute it:
 ```console
-$ sw_vers | column
+$ sw_vers | column -t
 ReleaseName:     Sonoma
 ProductName:     macOS
 ProductVersion:  14.1
@@ -51,7 +71,8 @@ BuildVersion:    23B74
 Then you can use `sw_vers` normally, with a new `-releaseName` flag to
 access macOS friendly names.
 
-If you prefer a concise function, just add to your shell profile:
+Alternatively, if you prefer a concise function, you can add this to your
+shell profile:
 ```sh
 sw_name() {
     awk '/SOFTWARE LICENSE AGREEMENT FOR macOS/ {
@@ -60,7 +81,7 @@ sw_name() {
 }
 ```
 
-And then call new command:
+And then call the new command:
 ```console
 $ sw_name
 Sonoma
@@ -70,8 +91,8 @@ Sonoma
 
 ### Supported macOS Versions
 
-| Versions                                     | Supported |
-| :------------------------------------------- | :-------- |
+| Versions                                    | Supported |
+| :------------------------------------------ | :-------- |
 | All from **`macOS 10.5`** to **`macOS 14`** | Yes ✅     |
 
 ## License
