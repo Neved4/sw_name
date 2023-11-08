@@ -16,7 +16,7 @@ print_sw_name() {
 sw_vers_name() {
  	if [ $# -eq 0 ]
 	then
-		sw_name
+		print_sw_name
 		/usr/bin/sw_vers
 		return 0
 	fi
