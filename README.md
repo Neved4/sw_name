@@ -5,7 +5,10 @@
 
 ## Background
 
-`sw_name` is a drop-in replacement for `sw_vers` that simplifies retrieving friendly names in macOS (`Ventura`, `Sonoma`). Currently, both `uname -a` and `sw_vers` won't provide this information, and `system_profiler` is not easily parseable and is slower.
+`sw_name` is a drop-in replacement for `sw_vers` that simplifies retrieving
+friendly names in macOS (`Ventura`, `Sonoma`). Currently, neither `uname -a`
+`sysctl` or `sw_vers` provide this information, and `system_profiler` is not
+easily parseable and is slower.
 
 ## Getting Started
 
@@ -30,7 +33,8 @@ Clone the repository:
 git clone https://github.com/Neved4/sw_vers
 ```
 
-Add the following to your shell profile (e.g. `.bash_profile`, `.zprofile`, `.profile`):
+Add the following to your shell profile (e.g. `.bash_profile`, `.zprofile`,
+`.profile`):
 ```sh
 alias sw_vers='/path/to/sw_vers_name.sh'
 ```
@@ -84,7 +88,8 @@ And then alias the new command:
 alias sw_vers='sw_vers_name'
 ```
 
-Then you can use `sw_vers` normally, with a new `-releaseName` flag to access macOS friendly names.
+Then you can use `sw_vers` normally, with a new `-releaseName` flag to
+access macOS friendly names.
 
 If you prefer a concise function, just use `sw_name()`.
 
@@ -92,9 +97,9 @@ If you prefer a concise function, just use `sw_name()`.
 
 ### Supported macOS Versions
 
-| Versions                                  | Supported |
-| :---------------------------------------- | :-------- |
-| All from **`macOS 10`** to **`macOS 14`** | Yes ✅     |
+| Versions                                     | Supported |
+| :------------------------------------------- | :-------- |
+| All from **`macOS 10.5`** to **`macOS 14`** | Yes ✅     |
 
 ## License
 
