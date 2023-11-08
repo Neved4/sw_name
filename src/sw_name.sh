@@ -4,7 +4,7 @@ sw_name() {
 	readonly app='/System/Library/CoreServices/Setup Assistant.app'
 	readonly license="$app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf"
 
-	awk '/SOFTWARE LICENSE AGREEMENT FOR macOS/ {
+	awk '/SOFTWARE LICENSE AGREEMENT FOR/ {
 		print substr($NF, 1, length($NF)-1)
 	}' "$license"
 }

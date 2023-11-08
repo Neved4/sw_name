@@ -75,7 +75,7 @@ Alternatively, if you prefer a concise function, you can add this to your
 shell profile:
 ```sh
 sw_name() {
-    awk '/SOFTWARE LICENSE AGREEMENT FOR macOS/ {
+    awk '/SOFTWARE LICENSE AGREEMENT FOR/ {
         print substr($NF, 1, length($NF)-1)
     }' '/System/Library/CoreServices/Setup Assistant.app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf'
 }
