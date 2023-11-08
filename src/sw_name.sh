@@ -1,4 +1,5 @@
 #!/bin/sh
+set -Cefu
 
 sw_name() {
 	readonly app='/System/Library/CoreServices/Setup Assistant.app'
