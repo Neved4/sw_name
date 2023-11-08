@@ -40,7 +40,7 @@ alias sw_vers='/path/to/sw_vers_name.sh'
 ```
 
 Then simply execute it:
-```sh
+```console
 $ sw_vers | column
 ReleaseName:     Sonoma
 ProductName:     macOS
@@ -48,50 +48,23 @@ ProductVersion:  14.1
 BuildVersion:    23B74
 ```
 
-Alternatively you can add it as a function in your profile:
-```sh
-sw_name() {
-    app='/System/Library/CoreServices/Setup Assistant.app'
-    license="$app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf"
-
-    awk '/SOFTWARE LICENSE AGREEMENT FOR macOS/ {
-        print substr($NF, 1, length($NF)-1)
-    }' "$license"
-}
-
-print_sw_name() {
-    printf 'ReleaseName:\t\t%s\n' "$(sw_name)"
-}
-
-sw_vers_name() {
-    if [ $# -eq 0 ]
-    then
-        sw_name
-        /usr/bin/sw_vers
-        return 0
-    fi
-
-    for i in "$@"
-    do
-        case $i in
-        -R|-releaseName|--releaseName)
-            printf '%s\n' "$(sw_name)" ;;
-        *)
-            /usr/bin/sw_vers "$i" ;;
-        esac
-    done
-}
-```
-
-And then alias the new command:
-```sh
-alias sw_vers='sw_vers_name'
-```
-
 Then you can use `sw_vers` normally, with a new `-releaseName` flag to
 access macOS friendly names.
 
-If you prefer a concise function, just use `sw_name()`.
+If you prefer a concise function, just add to your shell profile:
+```sh
+sw_name() {
+    awk '/SOFTWARE LICENSE AGREEMENT FOR macOS/ {
+        print substr($NF, 1, length($NF)-1)
+    }' '/System/Library/CoreServices/Setup Assistant.app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf'
+}
+```
+
+And then call new command:
+```console
+$ sw_name
+Sonoma
+```
 
 ## Compatibility
 
