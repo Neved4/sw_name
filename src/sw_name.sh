@@ -3,7 +3,9 @@ set -Cefu
 
 readonly sw_vers='/usr/bin/sw_vers'
 readonly setup_app='/System/Library/CoreServices/Setup Assistant.app'
-readonly license="$setup_app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf"
+readonly license_dir="$setup_app/Contents/Resources/en.lproj/"
+readonly license="${DARWIN_LICENSE:-$license_dir/OSXSoftwareLicense.rtf}"
+
 reset='\033[0m' red='\033[31m'
 
 println() {

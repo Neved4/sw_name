@@ -34,23 +34,27 @@ sw_name -productVersionExtra
 sw_name -buildVersion
 ```
 
-And has the following options:
+With the following options and environment:
 ```
 Options:
     -R, -releaseName, --releaseName
-        Prints release name (e.g.: Sonoma, Ventura, Monterey)
+        Prints release name (e.g.: Sonoma, Ventura, Monterey).
 
     -n, -productName, --productName
-        Prints product name (e.g.: macOS, Mac OS X)
+        Prints product name (e.g.: macOS, Mac OS X).
 
     -v, -productVersion, --productVersion
-        Prints product version (e.g.: 12.1, 14.0)
+        Prints product version (e.g.: 12.1, 14.0).
 
     -productVersionExtra, --productVersionExtra 
-        Prints info specific to certain releases (e.g: (a))
+        Prints info specific to certain releases (e.g: (a)).
 
     -b, -buildVersion, --buildVersion
-        Prints the build version (e.g.: 23B81, 21A559)
+        Prints the build version (e.g.: 23B81, 21A559).
+
+Environment:
+    DARWIN_LICENSE
+        Specifies the path to a custom license file.
 ```
 
 ### Setup
