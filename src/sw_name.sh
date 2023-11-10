@@ -1,10 +1,22 @@
 #!/bin/sh
 set -Cefu
 
-sw_name() {
-	readonly app='/System/Library/CoreServices/Setup Assistant.app'
-	readonly license="$app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf"
+readonly app='/System/Library/CoreServices/Setup Assistant.app'
+readonly license="$app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf"
+reset='\033[0m' red='\033[31m'
 
+check_license() {
+	if [ ! -f "$license" ]
+	then
+	 	ver=$(sw_vers -v)
+		printf '%b\n' \
+			"${red}error${reset}: could not find file: OSXSoftwareLicense.rtf" \
+			"Version $ver is not supported."
+			exit 1
+	fi
+}
+
+sw_name() {
 	awk '$0 ~ /SOFTWARE LICENSE AGREEMENT FOR/ {
 		gsub(/.*(macOS|OS X) |\\|.*$0 /, "")
 		for(i=1; i<= NF; i++) {
@@ -33,4 +45,5 @@ sw_vers_name() {
 	done
 }
 
+check_license
 sw_vers_name "$@" | column -t
