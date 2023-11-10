@@ -6,9 +6,12 @@ readonly setup_app='/System/Library/CoreServices/Setup Assistant.app'
 readonly license="$setup_app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf"
 reset='\033[0m' red='\033[31m'
 
+println() {
+	printf '%b\n' "$@"
+}
+
 errlic() {
-	printf '%b\n' \
-		"${red}error${reset}: could not find file: OSXSoftwareLicense.rtf" \
+	println "${red}error${reset}: could not find file: $license" \
 		"Version $ver is not supported."
 	exit 1
 } 2>/dev/stderr
@@ -42,7 +45,7 @@ main() {
 	[ ! -f "$license" ] && ver=$($sw_vers -v) && errlic
 
  	[ $# -eq 0 ] && {
-		printf 'ReleaseName:\t%s\n' "$(sw_name)"
+		println "ReleaseName:\t$(sw_name)"
 		$sw_vers && return 0
 	} | format
 
@@ -50,7 +53,7 @@ main() {
 	do
 		case $i in
 		-R|-releaseName|--releaseName)
-			printf '%s\n' "$(sw_name)" ;;
+			println "$(sw_name)" ;;
 		*)
 			$sw_vers "$i"
 		esac
