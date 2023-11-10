@@ -33,4 +33,4 @@ sw_vers_name() {
 	done
 }
 
-sw_vers_name "$@"
+sw_vers_name "$@" | column -t
