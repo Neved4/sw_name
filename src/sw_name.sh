@@ -25,7 +25,7 @@ sw_name() {
 
 format() {
 	column -t |
-	awk 'NR==1 {
+	awk 'NR==1 || NR==2 {
 		n=split($0, a, / +/)
 		$0=a[1] "     " a[2] " " a[3]
 		for (i=4; i<=n; i++) {
