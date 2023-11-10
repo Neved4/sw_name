@@ -61,7 +61,7 @@ alias sw_vers='/path/to/sw_vers_name.sh'
 
 Then simply execute it:
 ```console
-$ sw_vers | column -t
+$ sw_vers
 ReleaseName:     Sonoma
 ProductName:     macOS
 ProductVersion:  14.1
@@ -78,7 +78,8 @@ shell profile:
 ```sh
 sw_name() {
     awk '/SOFTWARE LICENSE AGREEMENT FOR/ {
-        print substr($NF, 1, length($NF)-1)
+        gsub(/.*(macOS|OS X) |\\|.*$0 /, "")
+        print
     }' '/System/Library/CoreServices/Setup Assistant.app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf'
 }
 ```
