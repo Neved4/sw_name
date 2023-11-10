@@ -46,6 +46,7 @@ sw_vers_name() {
 }
 
 check_license
-sw_vers_name "$@" |
-	awk 'NR==1 { line=$0; next } NR==2 { print; print line; next } 1' |
-		column -t
+sw_vers_name "$@" | column -t |
+	awk '{ gsub(/:  /, ": ") }
+		NR==1 { line=$0; next }
+		NR==2 { print; print line; next } 1'
