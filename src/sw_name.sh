@@ -5,8 +5,8 @@ sw_name() {
 	readonly app='/System/Library/CoreServices/Setup Assistant.app'
 	readonly license="$app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf"
 
-	awk '/SOFTWARE LICENSE AGREEMENT FOR/ {
-		gsub(/.*(macOS|OS X) |\\|.*SOFTWARE LICENSE AGREEMENT FOR /, "")
+	awk '$0 ~ /SOFTWARE LICENSE AGREEMENT FOR/ {
+		gsub(/.*(macOS|OS X) |\\|.*$0 /, "")
 		for(i=1; i<= NF; i++) {
 			$i = toupper(substr($i, 1, 1)) tolower(substr($i, 2))
 		}
