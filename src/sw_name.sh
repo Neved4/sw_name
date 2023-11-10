@@ -2,8 +2,8 @@
 set -Cefu
 
 readonly sw_vers='/usr/bin/sw_vers'
-readonly app='/System/Library/CoreServices/Setup Assistant.app'
-readonly license="$app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf"
+readonly setup_app='/System/Library/CoreServices/Setup Assistant.app'
+readonly license="$setup_app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf"
 reset='\033[0m' red='\033[31m'
 
 errlic() {
@@ -25,9 +25,17 @@ sw_name() {
 
 format() {
 	column -t |
-	awk '{ gsub(/:  /, ": ") }
-		NR==1 { line=$0; next }
-		NR==2 { print; print line; next } 1'
+	awk 'NR==1 {
+		n=split($0, a, / +/)
+		$0=a[1] "     " a[2] " " a[3]
+		for (i=4; i<=n; i++) {
+			$0 = $0 " " a[i]
+		}
+	}
+	{ gsub(/:  /, ": "); }
+	NR==1 { line=$0; next; }
+	NR==2 { print; print line; next; }
+	{ print }'
 }
 
 main() {
