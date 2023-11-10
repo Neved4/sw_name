@@ -7,6 +7,9 @@ sw_name() {
 
 	awk '/SOFTWARE LICENSE AGREEMENT FOR/ {
 		gsub(/.*(macOS|OS X) |\\|.*SOFTWARE LICENSE AGREEMENT FOR /, "")
+		for(i=1; i<= NF; i++) {
+			$i = toupper(substr($i, 1, 1)) tolower(substr($i, 2))
+		}
 		print
 	}' "$license"
 }
