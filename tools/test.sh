@@ -2,16 +2,18 @@
 set -Cefu
 
 main() {
-	licenses=$(find tools/samples -name "*.rtf" -type f)
+	licenses=$(find -Es tools/samples -type f -regex '.*\.(rtf|html)')
 	IFS='
 	'
 
-	for lic in $licenses
-	do
-		lic_name=${lic##*/} lic_name=${lic_name% *}
+	printf '%s\n' 'Parsed files:'
 
-		printf '%s %-12s%s%s' "Parsing" "$lic_name" "ReleaseName... " \
-			"$(DARWIN_LICENSE=$lic src/sw_name.sh |
+	for file in $licenses
+	do
+		ext=${file##*.} path=${file##*/} name=${path% *}
+
+		printf '%-14s%-5s%s' "- $name" "$ext" \
+			"$(DARWIN_LICENSE=$file src/sw_name.sh |
 				awk '/ReleaseName/ {print $2, $3}')"
 		printf '\n'
 	done
