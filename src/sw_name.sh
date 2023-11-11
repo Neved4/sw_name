@@ -44,7 +44,7 @@ format() {
 }
 
 main() {
-	[ ! -f "$license" ] && ver=$($sw_vers -v) && errlic
+	[ ! -f "$license" ] && ver=$($sw_vers -productVersion) && errlic
 
  	[ $# -eq 0 ] && {
 		println "ReleaseName:\t$(sw_name)"
