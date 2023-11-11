@@ -4,14 +4,13 @@
 # `sw_name` - print macOS friendly names! 🚀
 
 Drop-in replacement for `sw_vers` that simplifies retrieving friendly names
-in macOS (`Ventura`, `Sonoma`). Currently, neither `uname -a` `sysctl` or
-`sw_vers` provide this information, and `system_profiler` is not easily
-parseable and is slower.
+in macOS (`Ventura`, `Sonoma`). Currently, neither `uname -a`, `sysctl`,
+`system_profiler` or `sw_vers` provide this information.
 
 ## Highlights
 
-- 🚀 _**Fast**_ - minimal overhead, [sw_name.sh](src/sw_name.awk)
-  executes in only ~ `13.4 ms` (cfr. `5.7 ms` for `sw_vers`).
+- 🚀 _**Fast**_ - minimal overhead, [`sw_name.sh`](src/sw_name.awk)
+  executes in only ~ `13.4 ms` (_cfr._ `5.7 ms` for `sw_vers`).
 - 🔒 _**Robust**_ - accurate output with robust with robust regular
   expressions and parsing.
 - 📦 **Self-contained** - no dependencies, lighweight, uses POSIX `awk`,
