@@ -20,7 +20,7 @@ errlic() {
 
 sw_name() {
 	awk '$0 ~ /SOFTWARE LICENSE AGREEMENT FOR/ {
-		gsub(/.*(macOS|OS X) |\\|<\/b><\/span><\/p>/, "")
+		gsub(/.*(macOS|OS X) |\\|<\/b>|<\/span>|<\/p>/, "")
 		for(i=1; i<= NF; i++) {
 			$i = toupper(substr($i, 1, 1)) tolower(substr($i, 2))
 		}
