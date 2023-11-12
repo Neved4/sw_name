@@ -45,7 +45,7 @@ Options:
     -v, -productVersion, --productVersion
         Prints product version (e.g.: 12.1, 14.0).
 
-    -productVersionExtra, --productVersionExtra 
+    -productVersionExtra, --productVersionExtra
         Prints info specific to certain releases (e.g: (a)).
 
     -b, -buildVersion, --buildVersion
@@ -106,7 +106,7 @@ Sonoma
 
 | Versions                                    | Supported |
 | :------------------------------------------ | :-------- |
-| All from **`macOS 10.5`** to **`macOS 14`** | Yes ✅     |
+| All from **`OS X 10.9`** to **`macOS 14`**  | Yes ✅    |
 
 ## Acknowledgments
 
@@ -115,7 +115,7 @@ Thanks to [@risc] for helping test legacy OS X versions.
 ## License
 
 `sw_name` is licensed under the terms of the [MIT License].
-   
+
 See the [LICENSE](LICENSE) file for details.
 
 [macOS]: https://www.apple.com/macos/
