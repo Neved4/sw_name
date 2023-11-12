@@ -1,8 +1,12 @@
 #!/bin/sh
 set -Cefu
 
+findlic() {
+	find -Es tools/samples -type f -regex '.*\.(rtf|html)' | sort -V
+}
+
 main() {
-	licenses=$(find -Es tools/samples -type f -regex '.*\.(rtf|html)')
+	licenses=$(findlic)
 	IFS='
 	'
 
