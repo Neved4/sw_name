@@ -11,7 +11,7 @@ in macOS (`Ventura`, `Sonoma`). Currently, neither `uname -a`, `sysctl`,
 
 - 🚀 _**Fast**_ - minimal overhead, [`sw_name.sh`](src/sw_name.awk)
   executes in only ~ `13.4 ms` (_cfr._ `5.7 ms` for `sw_vers`).
-- 🔒 _**Robust**_ - accurate output with robust with robust regular
+- 🔒 _**Robust**_ - accurate output through tests, robust regular
   expressions and parsing.
 - 📦 **Self-contained** - no dependencies, lighweight, uses POSIX `awk`,
   `sh` (`1163 bytes`, `60 lines`).
