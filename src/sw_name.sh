@@ -56,8 +56,14 @@ main() {
 		case $i in
 		-R|-releaseName|--releaseName)
 			println "$(sw_name)" ;;
+		-n|-productName|--productName)
+			$sw_vers -productName ;;
+     	-v|-productVersion|--productVersion)
+			$sw_vers -productVersion ;;
+     	-b|-buildVersion|--buildVersion)
+			$sw_vers -buildVersion ;;
 		*)
-			$sw_vers "$i"
+			$sw_vers "$i" ;;
 		esac
 	done
 }
