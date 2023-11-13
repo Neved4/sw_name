@@ -2,6 +2,7 @@
 set -Cefu
 
 reset='\033[0m'
+under='\033[4m'
   red='\033[31m'
 green='\033[32m'
  blue='\033[34m'
@@ -34,7 +35,8 @@ iter() {
 
 			if [ "$ver" = "$i_ver" ]
 			then
-				[ "$friendly" = "$i_friendly" ] && color=$green || color=$red
+				[ "$friendly" = "$i_friendly" ] &&
+				color=$green || color=$under$red
 			fi
 		done
 
