@@ -47,7 +47,7 @@ Options:
     -v, -productVersion, --productVersion
         Prints product version (e.g.: 12.1, 14.0).
 
-    -productVersionExtra, --productVersionExtra
+    -E, -productVersionExtra, --productVersionExtra
         Prints info specific to certain releases (e.g: (a)).
 
     -b, -buildVersion, --buildVersion
