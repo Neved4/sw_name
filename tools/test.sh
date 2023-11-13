@@ -1,11 +1,8 @@
 #!/bin/sh
 set -Cefu
 
-reset='\033[0m'
-under='\033[4m'
-  red='\033[31m'
-green='\033[32m'
- blue='\033[34m'
+reset='\033[0m'  under='\033[4m'
+  red='\033[31m' green='\033[32m' blue='\033[34m'
 
 findf() {
 	printf '%s\n' "$1:"
@@ -18,7 +15,6 @@ iter() {
 
 	for file in $files
 	do
-		 ext=${file##*.}
 		path=${file##*/}
 		path=${path%.*}
 		name=${path% *}
@@ -40,7 +36,7 @@ iter() {
 			fi
 		done
 
-		printf '%s %5s %-6s%-2s %b%-2s%b\n' "-" "$name" "$ver" "=>" "$color" \
+		printf '  %5s %-6s%-2s %b%-2s%b\n' "$name" "$ver" "=>" "$color" \
     		"$friendly" "$reset"
 	done
 }
