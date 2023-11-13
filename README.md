@@ -9,7 +9,7 @@ in macOS (`Ventura`, `Sonoma`). Currently, neither `uname -a`, `sysctl`,
 
 ## Highlights
 
-- 🚀 _**Fast**_ - minimal overhead, [`sw_name -releaseName`] executes in `≈
+- 🚀 _**Fast**_ - minimal overhead, [`sw_name -releaseName`] executes in `~
   5.7 ms`.[^1]
 - 🔒 _**Robust**_ - accurate output through tests, robust regular
   expressions and parsing.
@@ -72,10 +72,10 @@ alias sw_vers='/path/to/sw_vers_name.sh'
 Then simply execute it:
 ```console
 $ sw_vers
-ReleaseName:     Sonoma
-ProductName:     macOS
-ProductVersion:  14.1
-BuildVersion:    23B74
+ReleaseName:    Sonoma
+ProductName:    macOS
+ProductVersion: 14.1
+BuildVersion:   23B74
 ```
 
 Then you can use `sw_vers` normally, with a new `-releaseName` flag to
