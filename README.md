@@ -19,7 +19,7 @@ in macOS (`Ventura`, `Sonoma`). Currently, neither `uname -a`, `sysctl`,
 ## Getting Started
 
 > [!NOTE]
-> _This utility is only intended to work in [macOS]._
+> _This utility is only intended to work in OS X and [macOS] >= `10.9`._
 
 ### Usage
 
@@ -104,13 +104,23 @@ Sonoma
 
 ### Supported macOS Versions
 
-| Versions                                    | Supported |
-| :------------------------------------------ | :-------- |
-| All from **`OS X 10.9`** to **`macOS 14`**  | Yes ✅    |
+| Version           | Supported |
+| :---------------- | :-------- |
+| **`macOS 14`**    | Yes ✅     |
+| **`macOS 13`**    | Yes ✅     |
+| **`macOS 12`**    | Yes ✅     |
+| **`macOS 11`**    | Yes ✅     |
+| **`macOS 10.15`** | Yes ✅     |
+| **`macOS 10.14`** | Yes ✅     |
+| **`macOS 10.13`** | Yes ✅     |
+| **`macOS 10.12`** | Yes ✅     |
+| **`OS X 10.11`**  | Yes ✅     |
+| **`OS X 10.10`**  | Yes ✅     |
+| **`OS X 10.9`**   | Yes ✅     |
 
 ## Acknowledgments
 
-Thanks to [@risc] for helping test legacy OS X versions.
+Thanks to [@risc] for testing legacy OS X versions.
 
 ## License
 
