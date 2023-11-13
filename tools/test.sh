@@ -6,7 +6,15 @@ reset='\033[0m'
 green='\033[32m'
  blue='\033[34m'
 
+findf() {
+	printf '%s\n' "$1:"
+	files=$(find -Es $dir -type f -regex ".*\.($1)" | sort -V)
+}
+
 iter() {
+	IFS='
+	'
+
 	for file in $files
 	do
 		 ext=${file##*.}
@@ -36,17 +44,11 @@ iter() {
 }
 
 main() {
-	IFS='
-	'
-
 	dir='tools/samples/OSXSoftwareLicense'
-	printf 'html:\n'
-	files=$(find -Es $dir -type f -regex '.*\.(html)' | sort -V)
-	iter
+
+	findf html && iter
 	printf '\n'
-	printf 'rtf:\n'
-	files=$(find -Es $dir -type f -regex '.*\.(rtf)' | sort -V)
-	iter
+	findf rtf && iter
 }
 
 main
