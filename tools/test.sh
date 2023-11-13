@@ -19,9 +19,8 @@ main() {
 	do
 		ext=${file##*.} path=${file##*/} name=${path% *}
 
-		printf "%-14s%-5s%-2s $blue%-2s$reset" "- $name" "$ext" "=>" \
-			"$(DARWIN_LICENSE=$file src/sw_name.sh |
-				awk '/ReleaseName/ {print $2, $3}')"
+		printf "%-7s%-12s%-2s $blue%-2s$reset" "- $ext" "$name" "=>" \
+			"$(DARWIN_LICENSE=$file src/sw_name.sh -releaseName)"
 		printf '\n'
 	done
 }
