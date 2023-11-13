@@ -4,8 +4,10 @@
 # `sw_name` - print macOS friendly names! 🚀
 
 Drop-in replacement for `sw_vers` that simplifies retrieving friendly names
-in macOS (`Ventura`, `Sonoma`). Currently, neither `uname -a`, `sysctl`,
-`system_profiler` or `sw_vers` provide this information.
+in macOS (`Ventura`, `Sonoma`).
+
+Currently, neither `uname -a`, `sysctl`, `system_profiler` or `sw_vers`
+provide this information.
 
 ## Highlights
 
