@@ -60,6 +60,8 @@ main() {
 			$sw_vers -productName ;;
      	-v|-productVersion|--productVersion)
 			$sw_vers -productVersion ;;
+		-E|-productVersionExtra|--productVersionExtra)
+			$sw_vers -productVersionExtra ;;
      	-b|-buildVersion|--buildVersion)
 			$sw_vers -buildVersion ;;
 		*)
