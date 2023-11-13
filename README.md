@@ -56,6 +56,8 @@ Options:
 Environment:
     DARWIN_LICENSE
         Specifies the path to a custom license file.
+        
+        Example: DARWIN_LICENSE=path/to/license sw_name
 ```
 
 ### Setup
