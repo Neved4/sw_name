@@ -9,12 +9,12 @@ in macOS (`Ventura`, `Sonoma`). Currently, neither `uname -a`, `sysctl`,
 
 ## Highlights
 
-- 🚀 _**Fast**_ - minimal overhead, [`sw_name.sh`](src/sw_name.awk)
-  executes in only ~ `13.4 ms` (_cfr._ `5.7 ms` for `sw_vers`).
+- 🚀 _**Fast**_ - minimal overhead, [`sw_name -releaseName`] executes in `≈
+  5.7 ms`.[^1]
 - 🔒 _**Robust**_ - accurate output through tests, robust regular
   expressions and parsing.
-- 📦 **Self-contained** - no dependencies, lighweight, uses POSIX `awk`,
-  `sh` (`1163 bytes`, `60 lines`).
+- 📦 **Lightweight** - self-contained, zero dependencies, uses POSIX `awk`,
+  `sh` (`1245 bytes`, `65 lines`).
 
 ## Getting Started
 
@@ -128,6 +128,10 @@ Thanks to [@risc] for testing legacy OS X versions.
 
 See the [LICENSE](LICENSE) file for details.
 
+[^1]: _cfr._ `4.9 ms` for `sw_vers -productName`, tested with [`hyperfine`].
+
+[`sw_name -releaseName`]: https://github.com/Neved4/sw_name/blob/main/src/sw_name.sh#L21-L29
+[`hyperfine`]:https://github.com/sharkdp/hyperfine
 [macOS]: https://www.apple.com/macos/
 [@risc]: https://github.com/0risc
 [MIT License]: https://opensource.org/license/mit/
