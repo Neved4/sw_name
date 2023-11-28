@@ -122,6 +122,32 @@ Sonoma
 | **`OS X 10.10`**  | Yes ✅     |
 | **`OS X 10.9`**   | Yes ✅     |
 
+<details closed>
+  <summary><b>Supported shells</b></summary>
+
+`sw_name` uses [macOS]'s `/bin/sh` by default, but you can run it with
+other POSIX shells too:
+```sh
+dash /path/to/sw_name.sh
+```
+
+#### Supported shells
+
+|     Shell | Version       | Supported |
+| --------: | :------------ | :-------- |
+|  [`bash`] | `5.2.15`      | ✅ Yes     |
+|  [`dash`] | `0.5.12`      | ✅ Yes     |
+| [`ksh93`] | `93u+m/1.0.7` | ✅ Yes     |
+|  [`mksh`] | `59c`         | ✅ Yes     |
+|  [`oksh`] | `7.3`         | ✅ Yes     |
+|   [`osh`] | `0.18.0`      | ✅ Yes     |
+|  [`posh`] | `0.14.1`      | ❌ No      |
+|  [`yash`] | `2.55`        | ✅ Yes     |
+|   [`zsh`] | `5.9`         | ✅ Yes      |
+
+</details>
+
+
 ## Acknowledgments
 
 Thanks to [@risc] for testing legacy OS X versions.
@@ -139,3 +165,13 @@ See the [LICENSE](LICENSE) file for details.
 [macOS]: https://www.apple.com/macos/
 [@risc]: https://github.com/0risc
 [MIT License]: https://opensource.org/license/mit/
+
+[`bash`]: https://git.savannah.gnu.org/cgit/bash.git/
+[`dash`]: https://git.kernel.org/pub/scm/utils/dash/dash.git
+[`ksh93`]: https://github.com/ksh93/ksh
+[`mksh`]: https://github.com/MirBSD/mksh
+[`osh`]: https://www.oilshell.org/cross-ref.html?tag=OSH#OSH
+[`oksh`]: https://github.com/ibara/oksh
+[`posh`]: https://salsa.debian.org/clint/posh
+[`yash`]: https://github.com/magicant/yash
+[`zsh`]: https://github.com/zsh-users/zsh
