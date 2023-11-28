@@ -14,14 +14,15 @@ provide this information.
 - 🚀 _**Fast**_ – minimal overhead, [`sw_name -releaseName`] executes in `~
   5.7 ms`.[^1]
 - 🔒 _**Robust**_ – accurate output through tests, robust regular
-  expressions and parsing.
+  expressions and tried parsing.
 - 📦 _**Lightweight**_ – self-contained, zero dependencies, uses POSIX `awk`,
   `sh` (`1245 bytes`, `65 lines`).
 
 ## Getting Started
 
 > [!NOTE]
-> _This utility is only intended to work from [OS X](macOS) 10.9 to [macOS] 14.0._
+> _This utility is only intended to work from [OS X](macOS) 10.9 to [macOS]
+> 14.0._
 
 ### Usage
 
