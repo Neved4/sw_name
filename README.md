@@ -11,8 +11,8 @@ provide this information.
 
 ## Highlights
 
-- 🚀 _**Fast**_ – minimal overhead, [`sw_name -releaseName`] executes in `~
-  5.7 ms`.[^1]
+- 🚀 _**Fast**_ – minimal overhead, [`sw_name -releaseName`] function
+  executes in `~ 5.7 ms`, of `~ 27 ms` total.[^1]
 - 🔒 _**Robust**_ – accurate output through tests, robust regular
   expressions and tried parsing.
 - 📦 _**Lightweight**_ – self-contained, zero dependencies, uses POSIX `awk`,
@@ -148,10 +148,9 @@ dash /path/to/sw_name.sh
 
 </details>
 
-
 ## Acknowledgments
 
-Thanks to [@risc] for testing legacy OS X versions.
+Thanks to [@0risc] for testing legacy OS X versions.
 
 ## License
 
@@ -164,7 +163,7 @@ See the [LICENSE](LICENSE) file for details.
 [`sw_name -releaseName`]: https://github.com/Neved4/sw_name/blob/main/src/sw_name.sh#L21-L29
 [`hyperfine`]:https://github.com/sharkdp/hyperfine
 [macOS]: https://www.apple.com/macos/
-[@risc]: https://github.com/0risc
+[@0risc]: https://github.com/0risc
 [MIT License]: https://opensource.org/license/mit/
 
 [`bash`]: https://git.savannah.gnu.org/cgit/bash.git/
