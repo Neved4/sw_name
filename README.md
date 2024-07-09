@@ -1,10 +1,12 @@
-![Shell Script](https://img.shields.io/badge/Shell_Script-9DDE66?logo=gnubash&logoColor=000&style=for-the-badge)
-![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=fff)
+![Shell Script](https://img.shields.io/badge/Shell_Script-9DDE66?logo=gnubash&logoColor=000&style=flat)
+![macOS](https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=fff&?style=flat)
 
-# `sw_name` - print macOS friendly names! 🚀
+## `sw_name` - print macOS friendly names! 🚀
 
 Drop-in replacement for `sw_vers` that simplifies retrieving friendly names
 in macOS (`Ventura`, `Sonoma`).
+
+## Motivation
 
 Currently, neither `uname -a`, `sysctl`, `system_profiler` or `sw_vers`
 provide this information.
@@ -13,8 +15,8 @@ provide this information.
 
 - 🚀 _**Fast**_ – minimal overhead, [`sw_name -releaseName`] function
   executes in `~ 5.7 ms`, of `~ 27 ms` total.[^1]
-- 🔒 _**Robust**_ – accurate output through tests, robust regular
-  expressions and tried parsing.
+- 🔒 _**Robust**_ – accurate output through tests, robust regular expressions
+  and parsing.
 - 📦 _**Lightweight**_ – self-contained, zero dependencies, uses POSIX `awk`,
   `sh` (`1245 bytes`, `65 lines`).
 
@@ -23,6 +25,11 @@ provide this information.
 > [!NOTE]
 > _This utility is only intended to work from [OS X](macOS) 10.9 to [macOS]
 > 14.0._
+
+Install it with:
+```sh
+$ brew install Neved4/tap/sw_name
+```
 
 ### Usage
 
@@ -36,21 +43,23 @@ sw_name -productVersionExtra
 sw_name -buildVersion
 ```
 
-With the following options and environment:
+The following options are available:
 ```
+usage: sw_name [options]
+
 Options:
     -R, -releaseName, --releaseName
         Prints release name (e.g.: Sonoma, Ventura, Monterey).
-
+    
     -n, -productName, --productName
         Prints product name (e.g.: macOS, Mac OS X).
-
+    
     -v, -productVersion, --productVersion
         Prints product version (e.g.: 12.1, 14.0).
-
+    
     -E, -productVersionExtra, --productVersionExtra
         Prints info specific to certain releases (e.g: (a)).
-
+    
     -b, -buildVersion, --buildVersion
         Prints the build version (e.g.: 23B81, 21A559).
 
@@ -79,7 +88,7 @@ Then simply execute it:
 $ sw_vers
 ReleaseName:    Sonoma
 ProductName:    macOS
-ProductVersion: 14.1
+ProductVersion: 14.5
 BuildVersion:   23B74
 ```
 
