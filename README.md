@@ -89,7 +89,7 @@ $ sw_vers
 ReleaseName:    Sonoma
 ProductName:    macOS
 ProductVersion: 14.5
-BuildVersion:   23B74
+BuildVersion:   23F79
 ```
 
 Then you can use `sw_vers` normally, with a new `-releaseName` flag to
