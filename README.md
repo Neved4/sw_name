@@ -23,8 +23,7 @@ provide this information.
 ## Getting Started
 
 > [!NOTE]
-> _This utility is only intended to work from [OS X](macOS) 10.9 to [macOS]
-> 14.0._
+> _This utility is only intended to work on versions between [OS X](macOS) 10.9 and the current version of [macOS]._
 
 Install it with:
 ```sh
@@ -50,16 +49,16 @@ usage: sw_name [options]
 Options:
     -R, -releaseName, --releaseName
         Prints release name (e.g.: Sonoma, Ventura, Monterey).
-    
+
     -n, -productName, --productName
         Prints product name (e.g.: macOS, Mac OS X).
-    
+
     -v, -productVersion, --productVersion
         Prints product version (e.g.: 12.1, 14.0).
-    
+
     -E, -productVersionExtra, --productVersionExtra
         Prints info specific to certain releases (e.g: (a)).
-    
+
     -b, -buildVersion, --buildVersion
         Prints the build version (e.g.: 23B81, 21A559).
 
@@ -120,6 +119,8 @@ Sonoma
 
 | Version           | Supported |
 | :---------------- | :-------- |
+| **`macOS 26`**    | Yes ✅     |
+| **`macOS 15`**    | Yes ✅     |
 | **`macOS 14`**    | Yes ✅     |
 | **`macOS 13`**    | Yes ✅     |
 | **`macOS 12`**    | Yes ✅     |
